@@ -1,3 +1,9 @@
+#' plot the print characters
+#'
+#' @param file.name the path to a pdf destination file, or \code{NULL}
+#' @return none. makes a plot
+#' @author Mark Cowley, 2012-07-16
+#' @export
 plot.pch <- function(file.name=NULL) {
     if(!is.null(file.name))
         pdf.A4(file.name)

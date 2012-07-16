@@ -1,7 +1,9 @@
-## Find the elemnt at the peak of the density distribution
-##
-## Mark Cowley, 12 July 2005
-##
+#' Find the element at the peak of the density distribution
+#' 
+#' @param data a matrix or vector of data
+#' @author Mark Cowley, 12 July 2005
+#' @export
+#' @rdname density.peak
 density.peak <- function(data) {
 	if( !is.null(ncol(data)) && (ncol(data) > 1) ) {
 		res <- NULL
@@ -18,6 +20,6 @@ density.peak <- function(data) {
 	}
 }
 
-get.density.peaks <- function(data) {
-	density.peak(data)
-}
+#' @export
+#' @rdname density.peak
+get.density.peaks <- density.peak
