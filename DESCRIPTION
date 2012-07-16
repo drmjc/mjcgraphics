@@ -1,12 +1,40 @@
 Package: mjcgraphics
-Version: 0.1
-Date: 2006-04-06
-Title: graphics library, redefining the default plot
-Author: Mark Cowley <mark.cowley@student.unsw.edu.au>
-Maintainer:  Mark Cowley <mark.cowley@student.unsw.edu.au>
-Depends: R (>= 2.2.0)
-Suggests:
-Description: Redefines the default plot, and produces publication quality images faster and easier than by default.
-URL: http://www.r-project.org, http://www.littlelab.bioinformatics.unsw.edu.au
+Version: 1.0.0
+Date: 2012-07-17
+Title: mjc's graphics library
+Author: Mark Cowley <m.cowley@garvan.org.au>
+Maintainer: Mark Cowley <m.cowley@garvan.org.au>
+Description: Package of various plotting functions, and convenience
+    functions, like png.VGA.
 Type: Package
 License: GPL-2
+Collate:
+    'barplot.getx.R'
+    'barplot.percentiles.R'
+    'density.peak.R'
+    'density.sketch.R'
+    'errorbarplot.R'
+    'image.table.R'
+    'multiHeatmap.R'
+    'pairs.cor.R'
+    'plot.blank.R'
+    'plot.CAT.R'
+    'plot.cor.R'
+    'plot.density.matrix.R'
+    'plot.matrix.R'
+    'plot.mean.vs.sd.R'
+    'plot.pch.R'
+    'plot.rank.vs.sd.R'
+    'plot.venn.R'
+    'plot2.R'
+    'plotting.devices.R'
+    'xyplot.hist.R'
+    'colours.R'
+Imports:
+    gplots,
+    grDevices,
+    graphics,
+    gtools,
+    limma,
+    mjcbase,
+    stats
