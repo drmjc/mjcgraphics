@@ -1,6 +1,6 @@
 Package: mjcgraphics
 Version: 1.0.1
-Date: 2012-07-17
+Date: 2012-07-18
 Title: mjc's graphics library
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
@@ -37,6 +37,10 @@ Collate:
     'hist.int.R'
     'pvalue.stars.R'
     'rect.hclust.labels.R'
+    'plot.rho.R'
+    'wrap.title.R'
+    'safe.brewer.pal.R'
+    'stripchart_annot.R'
 Imports:
     gplots,
     grDevices,
@@ -45,3 +49,5 @@ Imports:
     limma,
     mjcbase,
     stats
+Suggests:
+    RColorBrewer
