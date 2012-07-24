@@ -7,6 +7,14 @@
 #' @author Mark Cowley, 2012-07-06
 #' @export
 #' @rdname axis.percentiles
+#' @seealso \code{\link{grid.percentiles}}
+#' 
+#' @examples
+#' \dontrun{
+#' plot(1:100, xaxt="n")
+#' axis.percentiles(side=1, max=100)
+#' grid.percentiles(side=1, max=100)
+#' }
 axis.percentiles <- function(side=4, max) {
 	tmp <- seq(0,1,length.out=11)
 	axis(side=side, at=tmp*max, labels=paste(tmp*100, "%"))
@@ -18,3 +26,4 @@ axis.quartiles <- function(side=4, max) {
 	tmp <- seq(0,1,length.out=5)
 	axis(side=side, at=tmp*max, labels=paste(tmp*100, "%"))
 }
+
