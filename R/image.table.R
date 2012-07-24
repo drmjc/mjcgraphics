@@ -8,6 +8,7 @@
 #' @param x a \code{matrix} (or \code{data.frame}) of numbers
 #' @param legend add a color legend to RHS of plot
 #' @inheritParams graphics::image
+#' @inheritParams graphics::par
 #' 
 #' @return an image with x[1,1] in top left, and x[nrow(x), ncol(x)] in bottom
 #'   left corner Todo: get legend=TRUE to work when layout or mfrow/mfcol has

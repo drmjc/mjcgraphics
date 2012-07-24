@@ -65,7 +65,8 @@
 #'		default setting of transparent.
 #' @param open logical: open the recent file? Defaults to \code{TRUE} 
 #'	 if in an interactive session (see \code{\link{interactive}})
-#'
+#' @inheritParams png
+#' 
 #' @author Mark Cowley, 2009-06-10
 #' @rdname plotting.devices
 #' @aliases plotting.devices

@@ -7,6 +7,7 @@
 #' 
 #' @param x a matrix-like object of data, with each row to be plotted in a
 #'   single line (if type draws lines)
+#' @inheritParams graphics::plot
 #' @inheritParams graphics::par
 #' @param auto.log if the data is in the range [0,1] then it can be converted to
 #'               -log10. Useful if x contains p-values.
