@@ -23,12 +23,12 @@
   and 5 are in common, the proportion is 0.5
 }
 \description{
-  see also plot.CAT
+  see also catplot
 }
 \author{
   Mark Cowley, 2008-05-15
 }
 \seealso{
-  \code{\link{plot.CAT}}
+  \code{\link{catplot}} \code{\link{catplot.vs.random}}
 }
 

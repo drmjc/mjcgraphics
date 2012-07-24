@@ -1,8 +1,8 @@
-\name{plot.CAT}
-\alias{plot.CAT}
+\name{catplot}
+\alias{catplot}
 \title{Correspondence at the top (CAT) plot}
 \usage{
-  plot.CAT(x, y, sizes = 1:length(x), sketch = 0.1,
+  catplot(x, y, sizes = 1:length(x), sketch = 0.1,
     main = "CAT plot", ylim = c(0, 1), add = FALSE,
     proportion = FALSE, xTrue = rep(TRUE, length(x)),
     yTrue = rep(TRUE, length(y)), pch = NULL, ...)
@@ -81,6 +81,6 @@
   Irizarry et al, Nature Methods 2, 345 - 350 (2005)
 }
 \seealso{
-  \code{\link{calc.CAT}}
+  \code{\link{calc.CAT}} \code{\link{catplot.vs.random}}
 }
 

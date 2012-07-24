@@ -44,8 +44,8 @@
 #' Irizarry et al, Nature Methods 2, 345 - 350 (2005)
 #' @export
 #' @importFrom gtools permute
-#' @seealso \code{\link{calc.CAT}}
-plot.CAT <- function(x, y, sizes=1:length(x), sketch=0.1, 
+#' @seealso \code{\link{calc.CAT}} \code{\link{catplot.vs.random}}
+catplot <- function(x, y, sizes=1:length(x), sketch=0.1, 
 	main="CAT plot", ylim=c(0,1), add=FALSE, proportion=FALSE, 
 	xTrue=rep(TRUE, length(x)), yTrue=rep(TRUE, length(y)), pch=NULL, ...) {
 	
@@ -110,7 +110,7 @@ plot.CAT <- function(x, y, sizes=1:length(x), sketch=0.1,
 
 #' Calculate the overlap b/w two vectors, for various sizes.
 #' 
-#' see also plot.CAT
+#' see also catplot
 #' 
 #' @param x usually 2 character vectors, but could be a vector of distinct
 #'   numbers.
@@ -124,7 +124,7 @@ plot.CAT <- function(x, y, sizes=1:length(x), sketch=0.1,
 #'   top 10 from each list, and 5 are in common, the proportion is 0.5
 #' @author Mark Cowley, 2008-05-15
 #' @export
-#' @seealso \code{\link{plot.CAT}}
+#' @seealso \code{\link{catplot}} \code{\link{catplot.vs.random}}
 calc.CAT <- function(x,y,sizes) {
 	res <- rep(0, length(sizes))
 	for(i in 1:length(sizes)) {
@@ -165,8 +165,8 @@ calc.CAT <- function(x,y,sizes) {
 #' @export
 #' @importFrom gtools permute
 #' 
-#' @seealso \code{\link{plot.CAT}}
-plot.CAT.vs.random <- function(x, y, B=100, sizes=1:2000, 
+#' @seealso \code{\link{catplot}} \code{\link{calc.CAT}}
+catplot.vs.random <- function(x, y, B=100, sizes=1:2000, 
 	sizes.random=NULL, ylim=c(0,1), 
 	proportion=FALSE, random.col="lightgrey", add=FALSE, col=1, randomise="y", pch=1, main="CAT plot", ...) {
 
@@ -205,8 +205,8 @@ plot.CAT.vs.random <- function(x, y, B=100, sizes=1:2000,
 	
 	# We don't want to plot the polygon over the top of the points from the CAT plot.
 	# Thus, plot a blank CAT plot, then the polygon, then re-plot the CAT plot
-	if( !add ) plot.CAT(x,y,sizes=sizes, ylim=ylim, add=FALSE, proportion=proportion, type="n", main=main, sketch=1, ...)
+	if( !add ) catplot(x,y,sizes=sizes, ylim=ylim, add=FALSE, proportion=proportion, type="n", main=main, sketch=1, ...)
 	polygon(polygon.x, polygon.y, col=random.col)
 	lines(sizes.random, med, lty=4, lwd=2)
-	plot.CAT(x,y,sizes=sizes, add=TRUE, proportion=proportion, col=col, pch=pch, sketch=1, ...)
+	catplot(x,y,sizes=sizes, add=TRUE, proportion=proportion, col=col, pch=pch, sketch=1, ...)
 }

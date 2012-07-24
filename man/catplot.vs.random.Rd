@@ -1,8 +1,8 @@
-\name{plot.CAT.vs.random}
-\alias{plot.CAT.vs.random}
+\name{catplot.vs.random}
+\alias{catplot.vs.random}
 \title{Permutation based CAT plots.}
 \usage{
-  plot.CAT.vs.random(x, y, B = 100, sizes = 1:2000,
+  catplot.vs.random(x, y, B = 100, sizes = 1:2000,
     sizes.random = NULL, ylim = c(0, 1),
     proportion = FALSE, random.col = "lightgrey",
     add = FALSE, col = 1, randomise = "y", pch = 1,
@@ -57,6 +57,6 @@
   Mark Cowley, 2008-12-08
 }
 \seealso{
-  \code{\link{plot.CAT}}
+  \code{\link{catplot}} \code{\link{calc.CAT}}
 }
 
