@@ -34,8 +34,15 @@
 #' In addition there are routines for opening A4 & A5 portrait/landscape pdf 
 #' & CairoPDF devices.
 #' 
-#' @note i've made the CairoPDF.A4 etc plots defunct, since i never use them &
-#' it's not worth adding the Cairo depedency
+#' @section Apple27:
+#' The \code{\link{png.Apple27}}, \code{\link{jpeg.Apple27}}, \code{\link{pdf.Apple27}}
+#' functions are designed to create images that can be opened in Preview, and will be close
+#' to the maximum possible size on an Apple 27" LED Cinema/Thunderbolt Display. Note, Preview
+#' doesn't seem to want to automatically fill the entire screen from edge to edge, thus these
+#' are the largest sizes that preview is comforable opening at using \sQuote{View > Actual Size}.
+#' 
+#' @note i've made the Cairo* etc plots defunct, since i never use them &
+#' it's not worth adding the libcairo dependency.
 #' 
 #' @return device opening functions return nothing. \code{dev.off} prints the
 #'	file path and opens the previously opened file if in an interactive session.
@@ -105,13 +112,14 @@ pdf <- function (filename, width=11.69, height=8.27, onefile = TRUE, version = "
 }
 
 
-#' @note \code{dev.off}: default for open is \code{capabilities("X11")}, since when running
-#' on a server, without X11 forwarding, you can't open the newly
-#' created file. There may be a more precise way of doing this.
+#' @note \code{dev.off}: default for open is \code{capabilities("aqua")}, since this is
+#' only true when running locally on a mac. There must be a more precise way of doing this.
+#' Note \code{capabilities("X11")} seems a logical choice, but this is \code{TRUE} with
+#' X11 forwarding, when issuing a \code{system("open ...")} command will fail.
 #' 
 #' @export
 #' @rdname plotting.devices
-dev.off <- function(open=capabilities("X11")) {
+dev.off <- function(open=capabilities("aqua")) {
 	dv <- dev.cur()
 	grDevices::dev.off()
 	if( open && (! dv %in% c("quartz", "X11", "X11cairo") ) ) {
@@ -202,6 +210,13 @@ png.QUXGA <- function(filename="Rplot%03d.png", width=3200, height=2400,
 }
 
 
+#' @export
+#' @rdname plotting.devices
+png.Apple27 <- function(filename="Rplot%03d.png", width=2520, height=1340,
+						 pointsize = 12, bg = "white", res = NA,...) {
+	mjcgraphics::png(filename=filename, width=width, height=height, pointsize=pointsize, bg=bg, res=res, ...)
+}
+
 
 ###################		JPEG	 #############################
 
@@ -271,10 +286,21 @@ jpeg.QSXGA <- function(filename="Rplot%03d.jpeg", width=2800, height=2100,
 
 #' @export
 #' @rdname plotting.devices
+jpeg.Apple27 <- function(filename="Rplot%03d.jpeg", width=2520, height=1340,
+									pointsize = 12, quality = 75, bg = "white", res = NA,...) {
+	mjcgraphics::jpeg(filename=filename, width=width, height=height, pointsize=pointsize, quality=quality, bg=bg, res=res, ...)
+}
+
+
+#' @export
+#' @rdname plotting.devices
 jpeg.QUXGA <- function(filename="Rplot%03d.jpeg", width=3200, height=2400,
 						 pointsize = 12, quality = 75, bg = "white", res = NA,...) {
 	mjcgraphics::jpeg(filename=filename, width=width, height=height, pointsize=pointsize, quality=quality, bg=bg, res=res, ...)
 }
+
+###################		PDF 	 #############################
+
 
 #' @export
 #' @rdname plotting.devices
@@ -293,6 +319,12 @@ pdf.A4.portrait <- function(file, onefile=TRUE, version="1.4", ...) {
 #' @rdname plotting.devices
 pdf.A5 <- function(file, onefile=TRUE, version="1.4", ...) {
 	mjcgraphics::pdf(file, width=5.845, height=4.135, onefile=onefile, version=version, ...)
+}
+
+#' @export
+#' @rdname plotting.devices
+pdf.Apple27 <- function(file, onefile=TRUE, version="1.4", ...) {
+	mjcgraphics::pdf(file, width=23, height=12, onefile=onefile, version=version, ...)
 }
 
 

@@ -2,6 +2,7 @@
 \alias{Customized plotting devices}
 \alias{dev.off}
 \alias{jpeg}
+\alias{jpeg.Apple27}
 \alias{jpeg.QSXGA}
 \alias{jpeg.QUXGA}
 \alias{jpeg.QVGA}
@@ -15,8 +16,10 @@
 \alias{pdf.A4}
 \alias{pdf.A4.portrait}
 \alias{pdf.A5}
+\alias{pdf.Apple27}
 \alias{plotting.devices}
 \alias{png}
+\alias{png.Apple27}
 \alias{png.QSXGA}
 \alias{png.QUXGA}
 \alias{png.QVGA}
@@ -38,7 +41,7 @@
     onefile = TRUE, version = "1.4", paper = "special",
     do.par = TRUE, bg = "white", ...)
 
-  dev.off(open = capabilities("X11"))
+  dev.off(open = capabilities("aqua"))
 
   png.VGA(filename = "Rplot\%03d.png", width = 640,
     height = 480, pointsize = 12, bg = "white", res = NA,
@@ -76,6 +79,10 @@
     height = 2400, pointsize = 12, bg = "white", res = NA,
     ...)
 
+  png.Apple27(filename = "Rplot\%03d.png", width = 2520,
+    height = 1340, pointsize = 12, bg = "white", res = NA,
+    ...)
+
   jpeg.VGA(filename = "Rplot\%03d.jpeg", width = 640,
     height = 480, pointsize = 12, quality = 75,
     bg = "white", res = NA, ...)
@@ -108,6 +115,10 @@
     height = 2100, pointsize = 12, quality = 75,
     bg = "white", res = NA, ...)
 
+  jpeg.Apple27(filename = "Rplot\%03d.jpeg", width = 2520,
+    height = 1340, pointsize = 12, quality = 75,
+    bg = "white", res = NA, ...)
+
   jpeg.QUXGA(filename = "Rplot\%03d.jpeg", width = 3200,
     height = 2400, pointsize = 12, quality = 75,
     bg = "white", res = NA, ...)
@@ -118,6 +129,8 @@
     ...)
 
   pdf.A5(file, onefile = TRUE, version = "1.4", ...)
+
+  pdf.Apple27(file, onefile = TRUE, version = "1.4", ...)
 }
 \arguments{
   \item{filename}{the name of the output file}
@@ -197,15 +210,27 @@
   portrait/landscape pdf & CairoPDF devices.
 }
 \note{
-  i've made the CairoPDF.A4 etc plots defunct, since i
-  never use them & it's not worth adding the Cairo
-  depedency
+  i've made the Cairo* etc plots defunct, since i never use
+  them & it's not worth adding the libcairo dependency.
 
   \code{dev.off}: default for open is
-  \code{capabilities("X11")}, since when running on a
-  server, without X11 forwarding, you can't open the newly
-  created file. There may be a more precise way of doing
-  this.
+  \code{capabilities("aqua")}, since this is only true when
+  running locally on a mac. There must be a more precise
+  way of doing this. Note \code{capabilities("X11")} seems
+  a logical choice, but this is \code{TRUE} with X11
+  forwarding, when issuing a \code{system("open ...")}
+  command will fail.
+}
+\section{Apple27}{
+  The \code{\link{png.Apple27}},
+  \code{\link{jpeg.Apple27}}, \code{\link{pdf.Apple27}}
+  functions are designed to create images that can be
+  opened in Preview, and will be close to the maximum
+  possible size on an Apple 27" LED Cinema/Thunderbolt
+  Display. Note, Preview doesn't seem to want to
+  automatically fill the entire screen from edge to edge,
+  thus these are the largest sizes that preview is
+  comforable opening at using \sQuote{View > Actual Size}.
 }
 \author{
   Mark Cowley, 2009-06-10
