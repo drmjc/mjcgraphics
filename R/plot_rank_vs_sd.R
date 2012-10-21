@@ -12,7 +12,7 @@
 #' 
 #' @author Mark Cowley, 2009-05-27
 #' @export
-plot.rank.vs.sd <- function(x, main="", lowess.col="purple") {
+plot_rank_vs_sd <- function(x, main="", lowess.col="purple") {
 	# cls <- class(x)
 	# if ( cls %in% c("LumiBatch", "AffyBatch") ) {
 	# 	x <- exprs(x)
@@ -23,4 +23,5 @@ plot.rank.vs.sd <- function(x, main="", lowess.col="purple") {
 	lines(lowess(tmpRank, tmpSD), col=lowess.col, lwd=1.5)
 }
 # CHANGELOG:
-# 2012-07-16: dropepd the exprs call-logic to avoid a Biobase dependency in this plotting package.
+# 2012-07-16: dropped the exprs call-logic to avoid a Biobase dependency in this plotting package.
+# 2012-10-21: renamed from plot.rank.vs.sd to plot_rank_vs_sd

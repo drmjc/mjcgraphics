@@ -10,7 +10,7 @@
 #' @param \dots arguments passed to \code{plot}
 #' @author Mark Cowley, 3 April 2006
 #' @export
-plot.mean.vs.sd <- function(x, xlab=NULL, ylab=NULL, main="Per-ProbeSet mean vs sd", ...) {
+plot_mean_vs_sd <- function(x, xlab=NULL, ylab=NULL, main="Per-ProbeSet mean vs sd", ...) {
     means <- rowMeans(x, na.rm=TRUE)
     sd <- rowSD(x, na.rm=TRUE)
     nas <- union(which(is.na(means)), which(is.na(sd)))
@@ -46,7 +46,7 @@ plot.mean.vs.sd <- function(x, xlab=NULL, ylab=NULL, main="Per-ProbeSet mean vs 
 #' @param \dots arguments passed to \code{plot}
 #' @author Mark Cowley, 3 April 2006
 #' @export
-plot.mean.vs.var <- function(x, xlab=NULL, ylab=NULL, main="Per-ProbeSet mean vs var", ...) {
+plot_mean_vs_var <- function(x, xlab=NULL, ylab=NULL, main="Per-ProbeSet mean vs var", ...) {
     means <- rowMeans(x, na.rm=TRUE)
     var <- rowVar(x, na.rm=TRUE)
     nas <- union(which(is.na(means)), which(is.na(sd)))

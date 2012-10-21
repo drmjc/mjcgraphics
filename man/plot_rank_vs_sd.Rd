@@ -1,8 +1,8 @@
-\name{plot.rank.vs.sd}
-\alias{plot.rank.vs.sd}
+\name{plot_rank_vs_sd}
+\alias{plot_rank_vs_sd}
 \title{plot rank vs stdev}
 \usage{
-  plot.rank.vs.sd(x, main = "", lowess.col = "purple")
+  plot_rank_vs_sd(x, main = "", lowess.col = "purple")
 }
 \arguments{
   \item{x}{either a numeric matrix/data.frame, or an

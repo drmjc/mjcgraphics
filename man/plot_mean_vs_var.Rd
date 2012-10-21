@@ -1,8 +1,8 @@
-\name{plot.mean.vs.var}
-\alias{plot.mean.vs.var}
+\name{plot_mean_vs_var}
+\alias{plot_mean_vs_var}
 \title{plot mean vs variance}
 \usage{
-  plot.mean.vs.var(x, xlab = NULL, ylab = NULL,
+  plot_mean_vs_var(x, xlab = NULL, ylab = NULL,
     main = "Per-ProbeSet mean vs var", ...)
 }
 \arguments{

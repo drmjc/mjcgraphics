@@ -1,8 +1,8 @@
-\name{plot.mean.vs.sd}
-\alias{plot.mean.vs.sd}
+\name{plot_mean_vs_sd}
+\alias{plot_mean_vs_sd}
 \title{plot mean vs stdev}
 \usage{
-  plot.mean.vs.sd(x, xlab = NULL, ylab = NULL,
+  plot_mean_vs_sd(x, xlab = NULL, ylab = NULL,
     main = "Per-ProbeSet mean vs sd", ...)
 }
 \arguments{
