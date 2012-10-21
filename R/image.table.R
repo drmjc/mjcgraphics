@@ -18,7 +18,6 @@
 #' @export
 #' @importFrom gplots redblue
 #' @importFrom graphics image
-#' @import mjcbase
 image.table <- function(x, main="Heatmap", 
 	col=NULL, zlim=NULL,
 	legend=TRUE, unlog.legend=FALSE, legend.pos="bottom", legend.main="",
