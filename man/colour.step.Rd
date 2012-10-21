@@ -26,6 +26,9 @@
 \examples{
 colour.step(from="green", to="red", via="black", steps=11)
 }
+\author{
+  Mark Cowley, 2005-08-24
+}
 \seealso{
   \code{\link[RColorBrewer]{brewer.pal}}
 }
