@@ -16,7 +16,7 @@
 #' 
 #' @author Mark Cowley, 9 November 2005
 #' @export
-plot.rho <- function(x, do.mfrow=TRUE, name=paste(ncol(x), "arrays"), col=1) {
+plot_rho <- function(x, do.mfrow=TRUE, name=paste(ncol(x), "arrays"), col=1) {
     ## does col need recycling?
     col <- recycle( col )
 

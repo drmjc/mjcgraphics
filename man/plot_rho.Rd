@@ -1,8 +1,8 @@
-\name{plot.rho}
-\alias{plot.rho}
+\name{plot_rho}
+\alias{plot_rho}
 \title{rank-based correlation heatmap}
 \usage{
-  plot.rho(x, do.mfrow = TRUE,
+  plot_rho(x, do.mfrow = TRUE,
     name = paste(ncol(x), "arrays"), col = 1)
 }
 \arguments{
