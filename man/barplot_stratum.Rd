@@ -1,9 +1,8 @@
-\name{barplot.stratum}
-\alias{barplot.stratum}
-\title{Make a barplot of a binary variable, stratified by a certain function, like
-which.percentile, or which.quantile.}
+\name{barplot_stratum}
+\alias{barplot_stratum}
+\title{barplot a binary variable into different strata}
 \usage{
-  barplot.stratum(binary, strata, proportion = TRUE, ...)
+  barplot_stratum(binary, strata, proportion = TRUE, ...)
 }
 \arguments{
   \item{binary}{a boolean vector}

@@ -1,3 +1,5 @@
+#' barplot a binary variable into different strata
+#' 
 #' Make a barplot of a binary variable, stratified by a certain function, like
 #' which.percentile, or which.quantile. 
 #' 
@@ -11,7 +13,7 @@
 #' 
 #' @author Mark Cowley, 2008-12-22
 #' @export
-barplot.stratum <- function(binary, strata, proportion=TRUE, ...) {
+barplot_stratum <- function(binary, strata, proportion=TRUE, ...) {
 	levels <- sort(unique(strata))
 	res <- rep(0, length(levels))
 	
