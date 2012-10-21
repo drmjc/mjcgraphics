@@ -1,8 +1,8 @@
-\name{plot.blank}
-\alias{plot.blank}
+\name{plot_blank}
+\alias{plot_blank}
 \title{Make a blank plot.}
 \usage{
-  plot.blank(main = NULL, sub = NULL, message = NULL,
+  plot_blank(main = NULL, sub = NULL, message = NULL,
     box = FALSE)
 }
 \arguments{

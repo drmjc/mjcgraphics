@@ -10,7 +10,7 @@
 #' @param box logical: draw a box around the plot?
 #' @author Mark Cowley, long time ago!
 #' @export
-plot.blank <- function(main=NULL, sub=NULL, message=NULL, box=FALSE) {
+plot_blank <- function(main=NULL, sub=NULL, message=NULL, box=FALSE) {
 	plot(0, type="n", ann=FALSE, xaxt="n", yaxt="n", bty="n", xlim=c(0,1), ylim=c(0,1))
 
 	title(main=main, sub=sub)
