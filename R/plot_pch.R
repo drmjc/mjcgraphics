@@ -4,7 +4,7 @@
 #' @return none. makes a plot
 #' @author Mark Cowley, 2012-07-16
 #' @export
-plot.pch <- function(file.name=NULL) {
+plot_pch <- function(file.name=NULL) {
     if(!is.null(file.name))
         pdf.A4(file.name)
 

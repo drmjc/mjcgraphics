@@ -1,8 +1,8 @@
-\name{plot.pch}
-\alias{plot.pch}
+\name{plot_pch}
+\alias{plot_pch}
 \title{plot the print characters}
 \usage{
-  plot.pch(file.name = NULL)
+  plot_pch(file.name = NULL)
 }
 \arguments{
   \item{file.name}{the path to a pdf destination file, or
