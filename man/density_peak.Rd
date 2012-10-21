@@ -1,11 +1,11 @@
-\name{density.peak}
-\alias{density.peak}
-\alias{get.density.peaks}
+\name{density_peak}
+\alias{density_peak}
+\alias{get_density_peaks}
 \title{Find the element at the peak of the density distribution}
 \usage{
-  density.peak(data)
+  density_peak(data)
 
-  get.density.peaks(data)
+  get_density_peaks(data)
 }
 \arguments{
   \item{data}{a matrix or vector of data}
