@@ -15,7 +15,6 @@
 #' 
 #' @author Mark Cowley, 2009-01-23
 #' @export
-#' @importFrom stats density
 density.sketch <- function(x, sketch=10000, ...) {
 	if( length(x) > sketch )
 		x <- x[sample(length(x), sketch)]
