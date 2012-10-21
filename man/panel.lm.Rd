@@ -6,6 +6,27 @@
     pch = par("pch"), cex = 1, col.lm = "red", ...)
 }
 \arguments{
+  \item{x}{numeric vectors of the same length}
+
+  \item{y}{numeric vectors of the same length}
+
+  \item{col}{see \code{\link[graphics]{par}}}
+
+  \item{bg}{see \code{\link[graphics]{par}}}
+
+  \item{pch}{see \code{\link[graphics]{par}}}
+
+  \item{cex}{see \code{\link[graphics]{par}}}
+
+  \item{col.smooth}{color to be used by \code{lines} for
+  drawing the smooths.}
+
+  \item{span}{smoothing parameter \code{f} for
+  \code{lowess}, see there.}
+
+  \item{iter}{number of robustness iterations for
+  \code{lowess}.}
+
   \item{col.lm}{the colour of the linear model line}
 
   \item{\dots}{arguments to control the appearance of the

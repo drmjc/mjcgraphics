@@ -46,7 +46,15 @@ pairs.cor <- function(x, ..., upper.panel=panel.smooth, lower.panel=panel.cor) {
 #' 
 #' panel, for use with pairs, containing xy plot and linear model fit line.
 #'
-#' @inheritParams graphics::panel.smooth
+#' @param x numeric vectors of the same length
+#' @param y numeric vectors of the same length
+#' @param col see \code{\link[graphics]{par}}
+#' @param bg see \code{\link[graphics]{par}}
+#' @param pch see \code{\link[graphics]{par}}
+#' @param cex see \code{\link[graphics]{par}}
+#' @param col.smooth color to be used by \code{lines} for drawing the smooths.
+#' @param span smoothing parameter \code{f} for \code{lowess}, see there.
+#' @param iter number of robustness iterations for \code{lowess}.
 #' @param col.lm the colour of the linear model line
 #' @param \dots arguments to control the appearance of the line, passed to
 #'  \code{\link{abline}}
