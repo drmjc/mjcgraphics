@@ -53,7 +53,7 @@ plot.ExpressionSet <- function(x, feature=1, xlab="Rank", ylab="Expression Level
 #' @rdname plot-methods
 #' @aliases plot,ExpressionSet,ExpressionSet-method
 #' @importFrom stats lowess
-#' @importFrom lumi plot
+#' @importMethodsFrom lumi plot
 #' @export
 setMethod("plot",
 	signature=signature("ExpressionSet", "ExpressionSet"),
