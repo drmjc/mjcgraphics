@@ -1,6 +1,6 @@
 Package: mjcgraphics
-Version: 1.0.2
-Date: 2012-07-24
+Version: 1.0.3
+Date: 2012-10-21
 Title: mjc's graphics library
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
@@ -8,22 +8,35 @@ Description: Package of various plotting functions, and convenience
     functions, like png.VGA.
 Type: Package
 License: GPL-2
+Depends:
+    mjcbase,
+    methods
+Imports:
+    Biobase,
+    gplots,
+    grDevices,
+    graphics,
+    gtools,
+    limma,
+    lumi,
+    stats
+Suggests:
+    RColorBrewer
 Collate:
     'barplot.getx.R'
-    'barplot.percentiles.R'
-    'density.peak.R'
+    'density_peak.R'
     'density.sketch.R'
     'errorbarplot.R'
     'image.table.R'
     'multiHeatmap.R'
     'pairs.cor.R'
-    'plot.blank.R'
+    'plot_blank.R'
     'plot.cor.R'
     'plot.density.matrix.R'
     'plot.matrix.R'
-    'plot.mean.vs.sd.R'
-    'plot.pch.R'
-    'plot.rank.vs.sd.R'
+    'plot_mean_vs_sd.R'
+    'plot_pch.R'
+    'plot_rank_vs_sd.R'
     'plot.venn.R'
     'plot2.R'
     'plotting.devices.R'
@@ -36,19 +49,12 @@ Collate:
     'hist.int.R'
     'pvalue.stars.R'
     'rect.hclust.labels.R'
-    'plot.rho.R'
+    'plot_rho.R'
     'wrap.title.R'
     'safe.brewer.pal.R'
     'stripchart_annot.R'
     'catplot.R'
     'grid.percentiles.R'
-Imports:
-    gplots,
-    grDevices,
-    graphics,
-    gtools,
-    limma,
-    mjcbase,
-    stats
-Suggests:
-    RColorBrewer
+    'comboplot_scatter_boxplot-methods.R'
+    'plot.ExpressionSet.R'
+    'barplot_stratum.R'
