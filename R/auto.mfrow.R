@@ -1,24 +1,7 @@
-## Function to work out how many rows and plots to make for a certain number of plots.
-## eg 25 plots will cause par(mfrow=c(5,5)) to be called.
-## The function fills in any unsued plotting spots, eg:
-## auto.mfrow(7, TRUE) will set up a device with 3x3 spaces, then when auto.mfrow(7, FALSE) is called
-## after the plots have been made, 2 blank plots will then be 'printed'.
-##
-## NB, you must call auto.mfrow TWICE, once before plotting, and once after plotting, UNLESS
-## you know for sure that the nplots specified will fill all of the spaces.
-##
-## Parameters:
-##    nplots: an integer in [1,49]
-##    setup: if TRUE, then the graphical parameters (par) is set-up
-##           if FALSE, and nplots < the number of spaces for plots in the device, then
-##           blank plots are added to fill in the unused spaces.
-##
-## Mark Cowley, 3 June 2006
-##
-
-
-#' Function to work out how many rows and plots to make for a certain number of
-#' plots.
+#' Automatically setup par mfrow
+#' 
+#' Determine how many rows and plots to make for a certain number of
+#' plots & make the appropriate call to \code{par(mfrow)}
 #' 
 #' eg 25 plots will cause par(mfrow=c(5,5)) to be called.
 #' The function fills in any unsued plotting spots, eg:
@@ -30,8 +13,8 @@
 #' you know for sure that the nplots specified will fill all of the spaces.
 #' 
 #' @param nplots an integer in [1,49]
-#' @param setup if TRUE, then the graphical parameters (par) is set-up if
-#'   FALSE, and nplots < the number of spaces for plots in the device, then
+#' @param setup if \code{TRUE}, then the graphical parameters (par) is set-up if
+#'   \code{FALSE}, and nplots < the number of spaces for plots in the device, then
 #'   blank plots are added to fill in the unused spaces.
 #' @author Mark Cowley, 3 June 2006
 #' @export
@@ -60,6 +43,6 @@ auto.mfrow <- function(nplots, setup=TRUE) {
 		nblankplots <- par("mfrow")[1] * par("mfrow")[2] - nplots
 		if(nblankplots > 0)
 			for(i in 1:nblankplots)
-				plot.blank()
+				plot_blank()
 	}
 }
