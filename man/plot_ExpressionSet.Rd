@@ -1,9 +1,9 @@
-\name{plot.ExpressionSet}
-\alias{plot.ExpressionSet}
+\name{plot_ExpressionSet}
+\alias{plot_ExpressionSet}
 \title{plot a single feature from an ExpressionSet}
 \usage{
-  \method{plot}{ExpressionSet} (x, feature = 1,
-    xlab = "Rank", ylab = "Expression Level (log2)",
+  plot_ExpressionSet(x, feature = 1, xlab = "Rank",
+    ylab = "Expression Level (log2)",
     main = featureNames(x)[feature], add.mean = TRUE,
     sort = TRUE, samples = NULL)
 }
@@ -39,8 +39,8 @@
 \examples{
 \dontrun{
 	hent3 <- x["SLC29A3", ]
-	plot(hent3, sort=T, samples="APGI_1966")
-	plot(x, feature="SLC29A3", sort=T, samples="APGI_1966")
+	plot_ExpressionSet(hent3, sort=T, samples="APGI_1966")
+	plot_ExpressionSet(x, feature="SLC29A3", sort=T, samples="APGI_1966")
 }
 }
 \author{

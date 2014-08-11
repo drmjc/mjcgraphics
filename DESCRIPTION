@@ -1,6 +1,6 @@
 Package: mjcgraphics
 Version: 1.0.3
-Date: 2012-10-21
+Date: 2014-05-12
 Title: mjc's graphics library
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
@@ -56,5 +56,6 @@ Collate:
     'catplot.R'
     'grid.percentiles.R'
     'comboplot_scatter_boxplot-methods.R'
-    'plot.ExpressionSet.R'
     'barplot_stratum.R'
+    'dotplot-methods.R'
+    'plot.ExpressionSet.R'
