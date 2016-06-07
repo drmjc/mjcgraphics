@@ -39,11 +39,7 @@ plot_mean_vs_sd <- function(x, xlab=NULL, ylab=NULL, main="Per-ProbeSet mean vs 
 #' Plot the means of the rows of x (on x-axis) vs the variance of the rows of x
 #' (on y-axis)
 #' 
-#' @param x a \code{matrix} or numeric \code{data.frame}
-#' @param xlab see par
-#' @param ylab see par
-#' @param main see par
-#' @param \dots arguments passed to \code{plot}
+#' @inheritParams plot_mean_vs_sd
 #' @author Mark Cowley, 3 April 2006
 #' @export
 plot_mean_vs_var <- function(x, xlab=NULL, ylab=NULL, main="Per-ProbeSet mean vs var", ...) {
